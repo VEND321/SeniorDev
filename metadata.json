@@ -1,0 +1,6 @@
+{
+  "name": "Senior Dev Assistant",
+  "description": "Local-first AI debugger for self-taught developers. Upload errors or screenshots and get plain-English explanations and step-by-step fixes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

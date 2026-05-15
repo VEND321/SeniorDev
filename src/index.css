@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+@theme {
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-terminal-bg: #0d1117;
+  --color-terminal-panel: #161b22;
+  --color-terminal-accent: #58a6ff;
+  --color-terminal-text: #c9d1d9;
+  --color-terminal-border: #30363d;
+  --color-terminal-error: #f85149;
+  --color-terminal-success: #3fb950;
+  --color-terminal-warning: #d29922;
+}
+
+:root {
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+}
+
+body {
+  font-family: var(--font-mono);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@layer base {
+  * {
+    @apply border-terminal-border;
+  }
+}
+
+/* Custom Scrollbar for Terminal look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-terminal-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-terminal-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terminal-panel);
+}
+
+.terminal-glow {
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.1);
+}
+
+.markdown-body pre {
+  @apply bg-terminal-bg p-4 rounded border border-terminal-border my-4 overflow-x-auto;
+}
+
+.markdown-body code {
+  @apply font-mono text-sm;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply text-terminal-accent font-semibold mt-6 mb-2;
+}
+
+.markdown-body p {
+  @apply mb-4 leading-relaxed;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply pl-6 mb-4 list-decimal;
+}
+
+.markdown-body li {
+  @apply mb-2;
+}
